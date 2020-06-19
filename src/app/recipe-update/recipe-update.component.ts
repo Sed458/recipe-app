@@ -7,11 +7,12 @@ import { Location } from '@angular/common';
 import { RecipeService } from '../recipe.service';
 
 @Component({
-  selector: 'app-recipe-detail',
-  templateUrl: './recipe-detail.component.html',
-  styleUrls: ['./recipe-detail.component.css']
+  selector: 'app-recipe-update',
+  templateUrl: './recipe-update.component.html',
+  styleUrls: ['./recipe-update.component.css']
 })
-export class RecipeDetailComponent implements OnInit {
+export class RecipeUpdateComponent implements OnInit {
+  @Input() recipe: Recipe;
 
   constructor(
     private route: ActivatedRoute,
@@ -37,7 +38,5 @@ export class RecipeDetailComponent implements OnInit {
     this.recipeService.updateRecipe(this.recipe)
       .subscribe(() => this.goBack());
   }
-
-  @Input() recipe: Recipe;
 
 }

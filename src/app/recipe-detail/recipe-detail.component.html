@@ -1,21 +1,18 @@
 <div *ngIf="recipe" class="recipe-details">
     <mat-card>
         <mat-card-header>
-            <h2>{{recipe.name | uppercase}} Details</h2>
+            <mat-card-title><h2>{{recipe.name | uppercase}} Recipe</h2></mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <div>
-                <label>Name:
-                    <input [(ngModel)]="recipe.name" placeholder="name" />
-                </label>
-            </div>
-            <div><label>Time to make:
-                    <input [(ngModel)]="recipe.makeTime" placeholder="Time to make (mins)" />
-                </label> mins</div>
+            <div><span>Name:   </span>{{recipe.name}}</div>
+            <br>
+            <div><span>Time to make:   </span>{{recipe.makeTime}} mins</div>
         </mat-card-content>
         <mat-card-actions>
-            <button (click)="goBack()">go back</button>
-            <button (click)="save()">save</button>
+            <button (click)="goBack()">Return</button>
+            <a routerLink="/update/{{recipe.id}}">
+                <button>Update</button>
+            </a>
         </mat-card-actions>
     </mat-card>
 </div>

@@ -31,7 +31,7 @@ export class RecipeService {
     this.messageService.add('RecipeService: fetched recipes');
     return this.http.get<Recipe[]>(this.recipesUrl)
       .pipe(
-        tap(_ => this.log('fetched heroes')),
+        tap(_ => this.log('fetched recipes')),
         catchError(this.handleError<Recipe[]>('getRecipes', []))
       );
   }
@@ -39,7 +39,7 @@ export class RecipeService {
   getRecipe(id: number): Observable<Recipe> {
     const url = `${this.recipesUrl}/${id}`;
     return this.http.get<Recipe>(url).pipe(
-      tap(_ => this.log(`fetched hero id=${id}`)),
+      tap(_ => this.log(`fetched recipe id=${id}`)),
       catchError(this.handleError<Recipe>(`getRecipe id=${id}`))
     );
   }
@@ -55,7 +55,7 @@ export class RecipeService {
   /** POST: add a new recipe to the server */
   addRecipe(recipe: Recipe): Observable<Recipe> {
     return this.http.post<Recipe>(this.recipesUrl, recipe, this.httpOptions).pipe(
-      tap((newRecipe: Recipe) => this.log(`added hero w/ id=${newRecipe.id}`)),
+      tap((newRecipe: Recipe) => this.log(`added recipe w/ id=${newRecipe.id}`)),
       catchError(this.handleError<Recipe>('addRecipe'))
     )
   }

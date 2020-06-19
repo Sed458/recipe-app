@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
+import { RecipeUpdateComponent } from './recipe-update/recipe-update.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
     MessagesComponent,
     DashboardComponent,
     RecipeSearchComponent,
+    RecipeUpdateComponent,
   ],
   imports: [
     BrowserModule,
