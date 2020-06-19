@@ -1,47 +1,54 @@
-<div class="recent-container">
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Check out some recent recipes</mat-card-title>
-        </mat-card-header>
-        <mat-card-content [style.background-color]="'black'" class="recipe-cards">
-            <div class="recipe-card">
-                <ul class="columnList">
-                    <mat-card *ngFor="let recipe of recipes">
-                        <a routerLink="/detail/{{recipe.id}}">
-                            <mat-card-title>{{recipe.name}}</mat-card-title>
-                            <mat-card-content>Time to make: {{recipe.makeTime}} mins</mat-card-content>
-                        </a>
-                    </mat-card>
-                </ul>
-            </div>
-        </mat-card-content>
-    </mat-card>
+<div class="bg">
+    <div class="recent-container">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Check out some recent recipes</mat-card-title>
+            </mat-card-header>
+            <mat-card-content [style.background-color]="'black'" class="recipe-cards">
+                <div class="recipe-card">
+                    <ul class="columnList">
+                        <mat-card *ngFor="let recipe of recipes">
+                            <a routerLink="/detail/{{recipe.id}}">
+                                <mat-card-title>{{recipe.name}}</mat-card-title>
+                                <mat-card-content>Time to make: {{recipe.makeTime}} mins</mat-card-content>
+                            </a>
+                        </mat-card>
+                    </ul>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="add-recipe">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    <h1>Create New Recipe</h1>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <label> Recipe Name:
+                    <input #recipeName />
+                </label>
+                <br>
+                <br>
+                <label> Time to make:
+                    <input #recipeTime /> mins
+                </label>
+                <br>
+                <br>
+                <label> Image URL:
+                    <input #recipeImage />
+                </label>
+                <br>
+                <br>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="primary"
+                    (click)="add(recipeName.value, recipeTime.value, recipeImage.value); recipeName.value=''">
+                    Create
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>
-<div class="add-recipe">
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>
-                <h1>Create New Recipe</h1>
-            </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <label> Recipe Name:
-                <input #recipeName />
-            </label>
-            <br>
-            <br>
-            <label> Time to make:
-                <input #recipeTime /> mins
-            </label> 
-            <br>
-            <br>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-button color="primary" (click)="add(recipeName.value, recipeTime.value); recipeName.value=''">
-                Create
-            </button>
-        </mat-card-actions>
-    </mat-card>
-</div>
-
 <app-recipe-search></app-recipe-search>

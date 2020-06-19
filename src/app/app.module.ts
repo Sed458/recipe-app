@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { RecipeComponent } from './recipe/recipe.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
@@ -38,6 +39,7 @@ import { RecipeUpdateComponent } from './recipe-update/recipe-update.component';
     MatCardModule,
     MatGridListModule,
     MatFormFieldModule,
+    FlexLayoutModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
