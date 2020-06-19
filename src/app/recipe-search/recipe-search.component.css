@@ -1,0 +1,7 @@
+.search-recipe{
+    height: 100px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
