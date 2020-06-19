@@ -21,4 +21,11 @@ export class DashboardComponent implements OnInit {
       .subscribe(recipes => this.recipes = recipes.slice(1, 5));
   }
 
+  add(name: string, makeTime: number): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.recipeService.addRecipe({ name, makeTime } as Recipe)
+      .subscribe();
+  }
+
 }
