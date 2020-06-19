@@ -299,15 +299,15 @@
 </style>
 <div class="toolbar">
   <mat-toolbar class="flexSpaceBetween" color="primary">
+    <span>
+      <nav>
+        <a [style.color]="'white'" routerLink="/dashboard">Dashboard</a>
+      </nav>
+    </span>
     <span>{{title}}</span>
     <span>
       <nav>
-        <a routerLink="/dashboard">Dashboard</a>
-      </nav>
-    </span>
-    <span>
-      <nav>
-        <a routerLink="/recipes">Recipes</a>
+        <a [style.color]="'white'" routerLink="/recipes">Recipes</a>
       </nav>
     </span>
   </mat-toolbar>

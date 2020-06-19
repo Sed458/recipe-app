@@ -18,14 +18,17 @@ export class DashboardComponent implements OnInit {
 
   getRecipes(): void {
     this.recipeService.getRecipes()
-      .subscribe(recipes => this.recipes = recipes.slice(1, 5));
+      .subscribe(recipes => this.recipes = recipes.slice(recipes.length - 4, recipes.length));
   }
 
   add(name: string, makeTime: number): void {
     name = name.trim();
     if (!name) { return; }
     this.recipeService.addRecipe({ name, makeTime } as Recipe)
-      .subscribe();
+      .subscribe(recipe => {
+        this.recipes.shift()
+        this.recipes.push(recipe)
+      });
   }
 
 }
