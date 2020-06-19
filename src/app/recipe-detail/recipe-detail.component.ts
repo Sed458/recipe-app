@@ -33,6 +33,11 @@ export class RecipeDetailComponent implements OnInit {
     this.location .back();
   }
 
+  save(): void {
+    this.recipeService.updateRecipe(this.recipe)
+      .subscribe(() => this.goBack());
+  }
+
   @Input() recipe: Recipe;
 
 }

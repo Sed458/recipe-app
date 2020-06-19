@@ -23,4 +23,9 @@ export class RecipeComponent implements OnInit {
     this.recipeService.getRecipes().subscribe(recipes => this.recipes = recipes);
   }
 
+  delete(recipe: Recipe): void {
+    this.recipes = this.recipes.filter(r => r !== recipe);
+    this.recipeService.deleteRecipe(recipe).subscribe();
+  }
+
 }
