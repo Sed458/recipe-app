@@ -1,24 +1,49 @@
-<div *ngIf="recipe" class="recipe-details">
-    <mat-card>
-        <mat-card-header>
-            <h2>{{recipe.name | uppercase}} Recipe</h2>
-        </mat-card-header>
-        <mat-card-content>
-            <div>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <div *ngIf="recipe" class="recipe-details">
+        <mat-card class="border">
+            <mat-card-header>
+                <mat-card-title><h2>{{recipe.name | uppercase}} Recipe</h2></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <img mat-card-image class="imgs" src={{recipe.imageUrl}} />
+                <br>
                 <label>Name:     
                     <input [(ngModel)]="recipe.name" placeholder="name" />
                 </label>
-            </div>
-            <br>
-            <div><label>Time to make:
+                <br>
+                <div><label>Time to make:
                     <input [(ngModel)]="recipe.makeTime" placeholder="Time to make (mins)" />
                 </label> mins</div>
-        </mat-card-content>
-        <mat-card-actions>
-            <a routerLink="/update/{{recipe.id}}">
-                <button (click)="save()">Save</button>
-            </a>
-            <button (click)="goBack()">Cancel</button>
-        </mat-card-actions>
-    </mat-card>
+            </mat-card-content>
+            <mat-card-actions>
+                <button (click)="goBack()">Cancel</button>
+                <a routerLink="/detail/{{recipe.id}}">
+                    <button>Save</button>
+                </a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div *ngIf="recipe" class="ingredient-details">
+        <mat-card class="border">
+            <mat-card-header>
+                <mat-card-title><h2>Ingredients</h2></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <app-ingredient-update></app-ingredient-update>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div *ngIf="recipe" class="step-details">
+        <mat-card class="border">
+            <mat-card-header>
+                <mat-card-title><h2>Steps</h2></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                
+            </mat-card-content>
+            <mat-card-actions>
+                
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>

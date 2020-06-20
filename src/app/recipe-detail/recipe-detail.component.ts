@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipe';
+import { Ingredient } from '../ingredient';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -12,6 +13,7 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
+  @Input() recipe: Recipe;
 
   constructor(
     private route: ActivatedRoute,
@@ -37,7 +39,4 @@ export class RecipeDetailComponent implements OnInit {
     this.recipeService.updateRecipe(this.recipe)
       .subscribe(() => this.goBack());
   }
-
-  @Input() recipe: Recipe;
-
 }

@@ -1,7 +1,39 @@
 .recipe-details{
     height: 100px;
-    padding: 100px;
+    padding-top: 300px;
+    padding-left: 0px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+    flex: 0 1 calc(33.3% - 32px);
   }
+.ingredient-details{
+    height: 100px;
+    padding-top: 300px;
+    padding-left: 00px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex: 0 1 calc(33.3% - 32px);
+  }
+  .step-details{
+    height: 100px;
+    padding-top: 300px;
+    padding-left: 00px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex: 0 1 calc(33.3% - 32px);
+  }
+.imgs{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+.border{
+    border: 5px solid #000;
+}
+.container{
+    display: flex;
+}

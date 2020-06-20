@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Recipe } from './recipe';
+import { Ingredient } from './ingredient';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
@@ -20,10 +21,17 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, name: 'Chicken Curry', makeTime: 30, imageUrl: '' },
       { id: 20, name: 'Apple Crumble', makeTime: 30, imageUrl: '' }
     ];
-    return { recipes };
+
+    const ingredients = [
+      { id: 11, name: 'Ground Beef', recipe_id: 11, quantity: "1 pound" },
+      { id: 12, name: "Onion", recipe_id: 11, quantity: ""},
+      { id: 13, name: "Chocolate Bar", recipe_id: 12, quantity: ""},
+      { id: 14, name: "Butter", recipe_id: 13, quantity: ""},
+  ];
+    return { recipes, ingredients };
   }
 
-  genId(recipes: Recipe[]): number {
-    return recipes.length > 0 ? Math.max(...recipes.map(recipe => recipe.id)) + 1 : 11;
+  genId<T extends Recipe | Ingredient>(myTable: T[]): number {
+    return myTable.length > 0 ? Math.max(...myTable.map(t => t.id)) + 1 : 11;
   }
 }

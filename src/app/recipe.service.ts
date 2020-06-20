@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 
 import { Recipe } from './recipe';
-import { RECIPES } from './mock-recipes';
+import { Ingredient } from './ingredient';
 
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
+import { IngredientService } from './ingredient.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -22,7 +23,8 @@ export class RecipeService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private ingredientService: IngredientService,
   ) { }
 
   /** GET recipes from the server */

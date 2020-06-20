@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { RecipeComponent } from './recipe/recipe.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
@@ -20,6 +21,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
 import { RecipeUpdateComponent } from './recipe-update/recipe-update.component';
+import { IngredientComponent } from './ingredient/ingredient.component';
+import { IngredientUpdateComponent } from './ingredient-update/ingredient-update.component';
 
 
 @NgModule({
@@ -31,6 +34,8 @@ import { RecipeUpdateComponent } from './recipe-update/recipe-update.component';
     DashboardComponent,
     RecipeSearchComponent,
     RecipeUpdateComponent,
+    IngredientComponent,
+    IngredientUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,7 @@ import { RecipeUpdateComponent } from './recipe-update/recipe-update.component';
     MatGridListModule,
     MatFormFieldModule,
     FlexLayoutModule,
+    MatCheckboxModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
