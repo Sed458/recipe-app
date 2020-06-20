@@ -1,13 +1,14 @@
-<div class="container">
-    <ul class="columnList">
+<div class="bg">
+    <div class="cardList">
         <mat-card class="recipe-card" *ngFor="let recipe of recipes">
             <a routerLink="/detail/{{recipe.id}}">
                 <mat-card-title>{{recipe.name}}</mat-card-title>
                 <mat-card-content>Time to make: {{recipe.makeTime}} mins</mat-card-content>
+                <img mat-card-image class="imgs" src={{recipe.imageUrl}} />
                 <mat-card-actions>
                     <button mat-button (click)="delete(recipe)">Delete</button>
                 </mat-card-actions>
             </a>
         </mat-card>
-    </ul>
+    </div>
 </div>

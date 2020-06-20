@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 
 import { Recipe } from './recipe';
-import { RECIPES } from './mock-recipes';
+import { Ingredient } from './ingredient';
 
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
+import { IngredientService } from './ingredient.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -22,7 +23,8 @@ export class RecipeService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private ingredientService: IngredientService,
   ) { }
 
   /** GET recipes from the server */
@@ -31,7 +33,7 @@ export class RecipeService {
     this.messageService.add('RecipeService: fetched recipes');
     return this.http.get<Recipe[]>(this.recipesUrl)
       .pipe(
-        tap(_ => this.log('fetched heroes')),
+        tap(_ => this.log('fetched recipes')),
         catchError(this.handleError<Recipe[]>('getRecipes', []))
       );
   }
@@ -39,7 +41,7 @@ export class RecipeService {
   getRecipe(id: number): Observable<Recipe> {
     const url = `${this.recipesUrl}/${id}`;
     return this.http.get<Recipe>(url).pipe(
-      tap(_ => this.log(`fetched hero id=${id}`)),
+      tap(_ => this.log(`fetched recipe id=${id}`)),
       catchError(this.handleError<Recipe>(`getRecipe id=${id}`))
     );
   }
@@ -55,7 +57,7 @@ export class RecipeService {
   /** POST: add a new recipe to the server */
   addRecipe(recipe: Recipe): Observable<Recipe> {
     return this.http.post<Recipe>(this.recipesUrl, recipe, this.httpOptions).pipe(
-      tap((newRecipe: Recipe) => this.log(`added hero w/ id=${newRecipe.id}`)),
+      tap((newRecipe: Recipe) => this.log(`added recipe w/ id=${newRecipe.id}`)),
       catchError(this.handleError<Recipe>('addRecipe'))
     )
   }

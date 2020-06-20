@@ -2,14 +2,51 @@
 a {  
     text-decoration: none;
 }
+.bg {
+    background-image: url(https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/chorizo-mozarella-gnocchi-bake-cropped.jpg);
+    
+    min-height: 100%;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .container {
     padding: 40px;
 }
 .recipe-card {
     max-width: 400px; 
-    max-height: 100px;
+    max-height: 350px;
     margin: 5px; 
 }
 .columnList {
     column-count: 2;
+}
+.imgs{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+.cardList {
+    padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-left: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  /* Column Gap */
+  .cardList > * {
+    box-sizing: border-box;
+  }
+  .cardList > *:not(:last-child) {
+    margin-right: 2px;
+  }
+  /* Item sizing */
+  .cardListItem {
+    flex: 0 1 calc(33.3% - 32px);
   }

@@ -296,26 +296,24 @@
       visibility: hidden;
     }
   }
+
 </style>
 <div class="toolbar">
   <mat-toolbar class="flexSpaceBetween" color="primary">
+    <span>
+      <nav>
+        <a [style.color]="'white'" routerLink="/dashboard">Dashboard</a>
+      </nav>
+    </span>
     <span>{{title}}</span>
     <span>
       <nav>
-        <a routerLink="/dashboard">Dashboard</a>
-      </nav>
-    </span>
-    <span>
-      <nav>
-        <a routerLink="/recipes">Recipes</a>
+        <a [style.color]="'white'" routerLink="/recipes">
+          <span class="material-icons">menu_book</span>  Recipes
+        </a>
       </nav>
     </span>
   </mat-toolbar>
 </div>
 <br>
-<div class="bg">
-  <router-outlet></router-outlet>
-</div>
-<div class="body">
-  <app-messages></app-messages>
-</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,21 @@
+<div *ngFor="let ingredient of ingredients">
+    <button class="delete" (click)="delete(ingredient)">x</button>
+    {{ingredient.quantity}} {{ingredient.name}}
+</div>
+<br>
+<br>
+<div><label>Add Ingredient: </label>
+    <br>
+    <label> Ingredient Name:
+        <input #ingredientName />
+    </label>
+    <br>
+    <label> Quantity:
+        <input #ingredientQuantity />
+    </label>
+</div>
+<mat-card-actions>
+    <button mat-button color="primary" (click)="add(ingredientName.value, ingredientQuantity.value);">
+        Create
+    </button>
+</mat-card-actions>
