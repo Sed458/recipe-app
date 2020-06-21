@@ -1,0 +1,21 @@
+<div class="step-cards">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <h1>How to Make {{recipe.name | uppercase}}</h1>
+            </mat-card-title>
+            <mat-card-subtitle>{{currentStep.step_number}}. {{currentStep.title}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <span>{{currentStep.description}}</span>
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)="prev()">
+                Previous
+            </button>
+            <button (click)="next()">
+                Next
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

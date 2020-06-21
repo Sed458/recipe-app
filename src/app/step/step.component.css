@@ -1,0 +1,13 @@
+.step-cards{
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+  }

@@ -38,8 +38,12 @@
                 <app-recipe-steps></app-recipe-steps>
             </mat-card-content>
             <mat-card-actions>
-                
+                <a [routerLink]="['steps']">
+                    <button>Start Recipe!</button>
+                </a>
             </mat-card-actions>
         </mat-card>
     </div>
 </div>
+
+<router-outlet></router-outlet>

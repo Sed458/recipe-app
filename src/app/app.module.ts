@@ -9,6 +9,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatStepperModule } from '@angular/material/stepper';
 
 import { RecipeComponent } from './recipe/recipe.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
@@ -24,6 +25,7 @@ import { RecipeUpdateComponent } from './recipe-update/recipe-update.component';
 import { IngredientComponent } from './ingredient/ingredient.component';
 import { IngredientUpdateComponent } from './ingredient-update/ingredient-update.component';
 import { RecipeStepsComponent } from './recipe-steps/recipe-steps.component';
+import { StepComponent } from './step/step.component';
 
 
 @NgModule({
@@ -38,6 +40,7 @@ import { RecipeStepsComponent } from './recipe-steps/recipe-steps.component';
     IngredientComponent,
     IngredientUpdateComponent,
     RecipeStepsComponent,
+    StepComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { RecipeStepsComponent } from './recipe-steps/recipe-steps.component';
     MatGridListModule,
     MatFormFieldModule,
     FlexLayoutModule,
+    MatStepperModule,
     MatCheckboxModule,
     AppRoutingModule,
     HttpClientModule,
