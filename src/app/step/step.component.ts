@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { timer } from 'rxjs';
 import { Recipe } from '../recipe';
 import { Steps } from '../steps';
 
@@ -18,6 +19,12 @@ export class StepComponent implements OnInit {
 
   currentStep: Steps;
   currentIndex = 0;
+
+  defaultTime = 60;
+  setTime: number;
+  timeLeft: number = 60;
+  customTimeSet = false;
+  interval;
 
   constructor(
     private route: ActivatedRoute,
@@ -57,5 +64,30 @@ export class StepComponent implements OnInit {
         this.steps = steps.sort((x, y) => x.step_number - y.step_number);
         this.currentStep = this.steps[0];
       });
+  }
+
+  startTimer() {
+    this.interval = setInterval(() => {
+      if(this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.timeLeft = this.customTimeSet ? this.setTime : this.defaultTime;
+        clearInterval(this.interval);
+      }
+    },1000)
+  }
+
+  pauseTimer() {
+    clearInterval(this.interval);
+  }
+
+  resetTimer() {
+    this.timeLeft = this.customTimeSet ? this.setTime : this.defaultTime;
+  }
+
+  setTimer(custom: number) {
+    this.timeLeft = custom;
+    this.setTime = custom;
+    this.customTimeSet = true;
   }
 }

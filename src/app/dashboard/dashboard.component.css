@@ -15,6 +15,7 @@
   .recent-container {
       padding: 60px;
       color: rgb(0, 0, 0);
+      word-break: break-word;
   }
   .columnList {
     column-count: 4;

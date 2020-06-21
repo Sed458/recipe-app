@@ -1,5 +1,5 @@
 <div class="step-cards">
-    <mat-card>
+    <mat-card class="border">
         <mat-card-header>
             <mat-card-title>
                 <h1>How to Make {{recipe.name | uppercase}}</h1>
@@ -16,6 +16,32 @@
             <button (click)="next()">
                 Next
             </button>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="border">
+        <mat-card-header>
+            <mat-card-title>
+                <h1>Timer</h1>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <span>
+                <p>{{timeLeft}} Seconds Left....</p>
+            </span>
+            <br>
+            <mat-card>
+                <mat-card-content>
+                    <label> Set Timer:
+                        <input #timer />
+                    </label>
+                    <button (click)="setTimer(timer.value)">Set</button>
+                </mat-card-content>
+            </mat-card>
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)='startTimer()'>Start Timer</button>
+            <button (click)='pauseTimer()'>Pause</button>
+            <button (click)='resetTimer()'>Reset</button>
         </mat-card-actions>
     </mat-card>
 </div>
