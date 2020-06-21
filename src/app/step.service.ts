@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Ingredient } from './ingredient';
+import { Steps } from './steps';
 
+import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -10,9 +10,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class IngredientService {
+export class StepService {
 
-  private ingredientsUrl = 'api/ingredients'; // URL to web api
+  private stepsUrl = 'api/steps'; // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json ' })
@@ -23,29 +23,10 @@ export class IngredientService {
     private messageService: MessageService,
   ) { }
 
-  getIngredients(recipe_id: number): Observable<Ingredient[]> {
-    return this.http.get<Ingredient[]>(`${this.ingredientsUrl}/?recipe_id=${recipe_id}`)
+  getSteps(recipe_id: number): Observable<Steps[]> {
+    return this.http.get<Steps[]>(`${this.stepsUrl}/?recipe_id=${recipe_id}`)
     .pipe(
-      catchError(this.handleError<Ingredient[]>('getIngredients', []))
-    );
-  }
-
-  /** POST: add a new ingredient to the server */
-  addIngredient(ingredient: Ingredient): Observable<Ingredient> {
-    return this.http.post<Ingredient>(this.ingredientsUrl, ingredient, this.httpOptions).pipe(
-      tap((newIngredient: Ingredient) => this.log(`added recipe w/ id=${newIngredient.id}`)),
-      catchError(this.handleError<Ingredient>('addIngredient'))
-    )
-  }
-
-   /** DELETE: delete the ingredient from the server */
-   deleteRecipe(recipe: Ingredient | number): Observable<Ingredient> {
-    const id = typeof recipe === 'number' ? recipe : recipe.id;
-    const url = `${this.ingredientsUrl}/${id}`;
-
-    return this.http.delete<Ingredient>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted recipe id=${id}`)),
-      catchError(this.handleError<Ingredient>('deleteRecipe'))
+      catchError(this.handleError<Steps[]>('getSteps', []))
     );
   }
 

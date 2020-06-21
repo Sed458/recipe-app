@@ -23,6 +23,7 @@ import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
 import { RecipeUpdateComponent } from './recipe-update/recipe-update.component';
 import { IngredientComponent } from './ingredient/ingredient.component';
 import { IngredientUpdateComponent } from './ingredient-update/ingredient-update.component';
+import { RecipeStepsComponent } from './recipe-steps/recipe-steps.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { IngredientUpdateComponent } from './ingredient-update/ingredient-update
     RecipeUpdateComponent,
     IngredientComponent,
     IngredientUpdateComponent,
+    RecipeStepsComponent,
   ],
   imports: [
     BrowserModule,

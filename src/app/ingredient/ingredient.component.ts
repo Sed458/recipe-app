@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Ingredient } from '../ingredient';
-import { INGREDIENTS } from '../mock-ingredients';
 
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,7 +12,7 @@ import { IngredientService } from '../ingredient.service';
 })
 export class IngredientComponent implements OnInit {
 
-  @Input() ingredients: Ingredient[];
+  ingredients: Ingredient[];
 
   checked = false;
 
