@@ -1,5 +1,8 @@
 <div class="step-cards">
     <mat-card class="border">
+        <button (click)="goBack()">{{recipe.name}} Main Page</button>
+        <br>
+        <br>
         <mat-card-header>
             <mat-card-title>
                 <h1>How to Make {{recipe.name | uppercase}}</h1>
@@ -7,7 +10,14 @@
             <mat-card-subtitle>{{currentStep.step_number}}. {{currentStep.title}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            <span>{{currentStep.description}}</span>
+            <p>{{currentStep.description}}</p>
+            <div *ngFor="let image of currentStep.images">
+                <img src="{{image}}" />
+            </div>
+            <br>
+            <div *ngFor="let video of currentStep.videos">
+                <mat-video src="{{video}}"></mat-video>
+            </div>
         </mat-card-content>
         <mat-card-actions>
             <button (click)="prev()">
@@ -18,6 +28,8 @@
             </button>
         </mat-card-actions>
     </mat-card>
+</div>
+<div class="timer-cards">
     <mat-card class="border">
         <mat-card-header>
             <mat-card-title>
@@ -43,5 +55,5 @@
             <button (click)='pauseTimer()'>Pause</button>
             <button (click)='resetTimer()'>Reset</button>
         </mat-card-actions>
-    </mat-card>
+    </mat-card>      
 </div>

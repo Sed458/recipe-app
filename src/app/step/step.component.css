@@ -1,5 +1,11 @@
 .step-cards{
-    padding: 60px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer-cards{
     display: flex;
     justify-content: center;
     align-items: center;

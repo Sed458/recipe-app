@@ -4,6 +4,7 @@ import { Recipe } from '../recipe';
 import { Steps } from '../steps';
 
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { RecipeService } from '../recipe.service';
 import { StepService } from '../step.service';
@@ -30,6 +31,7 @@ export class StepComponent implements OnInit {
     private route: ActivatedRoute,
     private recipeService: RecipeService,
     private stepService: StepService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -89,5 +91,9 @@ export class StepComponent implements OnInit {
     this.timeLeft = custom;
     this.setTime = custom;
     this.customTimeSet = true;
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

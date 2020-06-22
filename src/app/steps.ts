@@ -3,6 +3,7 @@ export interface Steps {
     title: string;
     description: number;
     step_number: number;
-    media: string[];
+    images: string[];
+    videos: string[];
     recipe_id: string;
 }

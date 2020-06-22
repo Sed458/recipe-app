@@ -31,14 +31,14 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const steps = [
-      { id: 11, title: 'Decide how much pasta to cook', description: "nwienfiwnoefnwienfinwef", step_number: 1, media: "https://www.wikihow.com/images/thumb/d/d7/Cook-Spaghetti-Step-2-Version-2.jpg/aid724792-v4-728px-Cook-Spaghetti-Step-2-Version-2.jpg.webp", recipe_id: 11 },
-      { id: 12, title: 'Fill a large pot with cold or cool water', description: "nwienfiwnoefnwienfinwef", step_number: 2, media: "https://www.wikihow.com/images/thumb/2/21/Make-Spaghetti-Step-2-Version-7.jpg/aid724792-v4-728px-Make-Spaghetti-Step-2-Version-7.jpg.webp", recipe_id: 11 },
-      { id: 13, title: 'Add salt and bring water to a boil', description: "nwienfiwnoefnwienfinwef", step_number: 3, media: "https://www.wikihow.com/video/7/7b/Make%20Spaghetti%20Step%203%20Version%206.360p.mp4", recipe_id: 11 },
-      { id: 14, title: 'Stir the spaghetti into the boiling water', description: "nwienfiwnoefnwienfinwef", step_number: 4, media: "https://www.wikihow.com/video/c/c5/Make%20Spaghetti%20Step%204%20Version%207.360p.mp4", recipe_id: 11 },
-      { id: 15, title: 'Set a timer to 8 to 11 minutes and stir noodles frequently', description: "nwienfiwnoefnwienfinwef", step_number: 5, media: "https://www.wikihow.com/video/4/42/Make%20Spaghetti%20Step%206%20Version%207.360p.mp4", recipe_id: 11 },
-      { id: 16, title: 'Test the spaghetti to see if it\'s as soft as you like', description: "nwienfiwnoefnwienfinwef", step_number: 6, media: "https://www.wikihow.com/video/4/42/Make%20Spaghetti%20Step%206%20Version%207.360p.mp4", recipe_id: 11 },
-      { id: 17, title: 'Drain the cooked spaghetti using a colander', description: "nwienfiwnoefnwienfinwef", step_number: 7, media: "https://www.wikihow.com/images/thumb/e/ea/Make-Spaghetti-Step-7-Version-7.jpg/aid724792-v4-728px-Make-Spaghetti-Step-7-Version-7.jpg.webp", recipe_id: 11 },
-      { id: 18, title: 'Top the noodles with your favorite sauce and serve', description: "nwienfiwnoefnwienfinwef", step_number: 8, media: "https://www.wikihow.com/images/thumb/2/2e/Make-Spaghetti-Step-24-Version-2.jpg/aid724792-v4-728px-Make-Spaghetti-Step-24-Version-2.jpg.webp", recipe_id: 11 },
+      { id: 11, title: 'Decide how much pasta to cook', description: "1nwienfiwnoefnwienfinwef", step_number: 1, images: ["https://www.wikihow.com/images/thumb/d/d7/Cook-Spaghetti-Step-2-Version-2.jpg/aid724792-v4-728px-Cook-Spaghetti-Step-2-Version-2.jpg.webp"], videos: [], recipe_id: 11 },
+      { id: 12, title: 'Fill a large pot with cold or cool water', description: "2nwienfiwnoefnwienfinwef", step_number: 2, images: ["https://www.wikihow.com/images/thumb/2/21/Make-Spaghetti-Step-2-Version-7.jpg/aid724792-v4-728px-Make-Spaghetti-Step-2-Version-7.jpg.webp"], videos: [], recipe_id: 11 },
+      { id: 13, title: 'Add salt and bring water to a boil', description: "3nwienfiwnoefnwienfinwef", step_number: 3, images: [], videos: ["https://www.wikihow.com/video/7/7b/Make%20Spaghetti%20Step%203%20Version%206.360p.mp4"], recipe_id: 11 },
+      { id: 14, title: 'Stir the spaghetti into the boiling water', description: "4nwienfiwnoefnwienfinwef", step_number: 4, images: [], videos: ["https://www.wikihow.com/video/c/c5/Make%20Spaghetti%20Step%204%20Version%207.360p.mp4"], recipe_id: 11 },
+      { id: 15, title: 'Set a timer to 8 to 11 minutes and stir noodles frequently', description: "5nwienfiwnoefnwienfinwef", step_number: 5, images: [], videos: ["https://www.wikihow.com/video/a/a6/Make%20Spaghetti%20Step%205%20Version%207.360p.mp4"], recipe_id: 11 },
+      { id: 16, title: 'Test the spaghetti to see if it\'s as soft as you like', description: "6nwienfiwnoefnwienfinwef", step_number: 6, images: [], videos: ["https://www.wikihow.com/video/4/42/Make%20Spaghetti%20Step%206%20Version%207.360p.mp4"], recipe_id: 11 },
+      { id: 17, title: 'Drain the cooked spaghetti using a colander', description: "7nwienfiwnoefnwienfinwef", step_number: 7, images: ["https://www.wikihow.com/images/thumb/e/ea/Make-Spaghetti-Step-7-Version-7.jpg/aid724792-v4-728px-Make-Spaghetti-Step-7-Version-7.jpg.webp"], videos: [], recipe_id: 11 },
+      { id: 18, title: 'Top the noodles with your favorite sauce and serve', description: "8nwienfiwnoefnwienfinwef", step_number: 8, images: ["https://www.wikihow.com/images/thumb/2/2e/Make-Spaghetti-Step-24-Version-2.jpg/aid724792-v4-728px-Make-Spaghetti-Step-24-Version-2.jpg.webp"], videos: [], recipe_id: 11 },
     ];
     return { recipes, ingredients, steps };
   }
