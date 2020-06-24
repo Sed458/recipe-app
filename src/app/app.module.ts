@@ -18,6 +18,7 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -28,6 +29,8 @@ import { IngredientComponent } from './ingredient/ingredient.component';
 import { IngredientUpdateComponent } from './ingredient-update/ingredient-update.component';
 import { RecipeStepsComponent } from './recipe-steps/recipe-steps.component';
 import { StepComponent } from './step/step.component';
+import { StepUpdateComponent } from './step-update/step-update.component';
+import { SnackBarSaveComponent } from './snack-bar-save/snack-bar-save.component';
 
 
 @NgModule({
@@ -43,6 +46,8 @@ import { StepComponent } from './step/step.component';
     IngredientUpdateComponent,
     RecipeStepsComponent,
     StepComponent,
+    StepUpdateComponent,
+    SnackBarSaveComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +61,7 @@ import { StepComponent } from './step/step.component';
     MatCheckboxModule,
     BrowserAnimationsModule,
     MatVideoModule,
+    MatSnackBarModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(

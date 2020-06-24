@@ -1,0 +1,28 @@
+.add-image {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.add-video {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.steps-update {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new-step {
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 123, 123, 0.473);
+}
+.border {
+    border: 5px solid #000;
+}
+.return-button {
+    padding-top: 60px;
+    padding-left: 20px;
+}

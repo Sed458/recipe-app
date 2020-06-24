@@ -1,9 +1,9 @@
-export interface Steps {
+export interface Step {
     id: number;
     title: string;
-    description: number;
+    description: string;
     step_number: number;
     images: string[];
     videos: string[];
-    recipe_id: string;
+    recipe_id: number;
 }

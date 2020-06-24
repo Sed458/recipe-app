@@ -9,7 +9,7 @@
                     <ul class="columnList">
                         <mat-card *ngFor="let recipe of recipes">
                             <a routerLink="/detail/{{recipe.id}}">
-                                <mat-card-title>{{recipe.name}}</mat-card-title>
+                                <mat-card-title class="recipe-name">{{recipe.name}}</mat-card-title>
                                 <mat-card-content>Time to make: {{recipe.makeTime}} mins</mat-card-content>
                             </a>
                         </mat-card>
@@ -36,7 +36,7 @@
                 </label>
                 <br>
                 <br>
-                <label> Image URL:
+                <label> Cover Image URL:
                     <input #recipeImage />
                 </label>
                 <br>

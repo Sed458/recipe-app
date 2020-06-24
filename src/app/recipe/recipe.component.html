@@ -2,7 +2,7 @@
     <div class="cardList">
         <mat-card class="recipe-card" *ngFor="let recipe of recipes">
             <a routerLink="/detail/{{recipe.id}}">
-                <mat-card-title>{{recipe.name}}</mat-card-title>
+                <mat-card-title class="recipe-name">{{recipe.name}}</mat-card-title>
                 <mat-card-content>Time to make: {{recipe.makeTime}} mins</mat-card-content>
                 <img mat-card-image class="imgs" src={{recipe.imageUrl}} />
                 <mat-card-actions>

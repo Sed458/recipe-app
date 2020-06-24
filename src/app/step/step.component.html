@@ -16,7 +16,7 @@
             </div>
             <br>
             <div *ngFor="let video of currentStep.videos">
-                <mat-video src="{{video}}"></mat-video>
+                <mat-video src="{{video}}" [preload]="true" [fullscreen]="false" [download]="false" color="accent" spinner="spin"></mat-video>
             </div>
         </mat-card-content>
         <mat-card-actions>

@@ -30,6 +30,11 @@
   .recipe-cards {
     height: 120px;
   }
+  .recipe-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
   .recipe-card {
     padding-top: 2px;
     padding-right: 40px;

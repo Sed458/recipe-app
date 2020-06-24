@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Ingredient } from '../ingredient';
-import { INGREDIENTS } from '../mock-ingredients';
 
 import { ActivatedRoute } from '@angular/router';
 
@@ -40,7 +39,7 @@ export class IngredientUpdateComponent implements OnInit {
 
   delete(recipe: Ingredient): void {
     this.ingredients = this.ingredients.filter(r => r !== recipe);
-    this.ingredientService.deleteRecipe(recipe).subscribe();
+    this.ingredientService.deleteIngredient(recipe).subscribe();
   }
 
   ngOnInit(): void {

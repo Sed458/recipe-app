@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Steps } from './steps';
+import { Step } from './step';
 
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
@@ -23,10 +23,37 @@ export class StepService {
     private messageService: MessageService,
   ) { }
 
-  getSteps(recipe_id: number): Observable<Steps[]> {
-    return this.http.get<Steps[]>(`${this.stepsUrl}/?recipe_id=${recipe_id}`)
+  getSteps(recipe_id: number): Observable<Step[]> {
+    return this.http.get<Step[]>(`${this.stepsUrl}/?recipe_id=${recipe_id}`)
     .pipe(
-      catchError(this.handleError<Steps[]>('getSteps', []))
+      catchError(this.handleError<Step[]>('getSteps', []))
+    );
+  }
+
+  /** POST: add a new step to the server */
+  addStep(step: Step): Observable<Step> {
+    return this.http.post<Step>(this.stepsUrl, step, this.httpOptions).pipe(
+      tap((newStep: Step) => this.log(`added step w/ id=${newStep.id}`)),
+      catchError(this.handleError<Step>('addStep'))
+    )
+  }
+
+  /** DELETE: delete the recipe from the server */
+  deleteStep(step: Step | number): Observable<Step> {
+    const id = typeof step === 'number' ? step : step.id;
+    const url = `${this.stepsUrl}/${id}`;
+
+    return this.http.delete<Step>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted step id=${id}`)),
+      catchError(this.handleError<Step>('deleteStep'))
+    );
+  }
+
+  /** PUT: update the step on the server  */
+  updateStep(step: Step): Observable<any>{
+    return this.http.put(this.stepsUrl, step, this.httpOptions).pipe(
+      tap(_ => this.log(`updated step id=${step.id}`)),
+      catchError(this.handleError<any>('updateStep'))
     );
   }
 

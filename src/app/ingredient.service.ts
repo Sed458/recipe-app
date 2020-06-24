@@ -39,13 +39,13 @@ export class IngredientService {
   }
 
    /** DELETE: delete the ingredient from the server */
-   deleteRecipe(recipe: Ingredient | number): Observable<Ingredient> {
-    const id = typeof recipe === 'number' ? recipe : recipe.id;
+   deleteIngredient(ingredient: Ingredient | number): Observable<Ingredient> {
+    const id = typeof ingredient === 'number' ? ingredient : ingredient.id;
     const url = `${this.ingredientsUrl}/${id}`;
 
     return this.http.delete<Ingredient>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted recipe id=${id}`)),
-      catchError(this.handleError<Ingredient>('deleteRecipe'))
+      tap(_ => this.log(`deleted ingredient id=${id}`)),
+      catchError(this.handleError<Ingredient>('deleteIngredient'))
     );
   }
 

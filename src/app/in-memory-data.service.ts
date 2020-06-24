@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Recipe } from './recipe';
 import { Ingredient } from './ingredient';
-import { Steps } from './steps';
-import { HttpErrorResponse } from '@angular/common/http';
+import { Step } from './step';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +42,7 @@ export class InMemoryDataService implements InMemoryDbService {
     return { recipes, ingredients, steps };
   }
 
-  genId<T extends Recipe | Ingredient | Steps>(myTable: T[]): number {
+  genId<T extends Recipe | Step | Ingredient>(myTable: T[]): number {
     return myTable.length > 0 ? Math.max(...myTable.map(t => t.id)) + 1 : 11;
   }
 }

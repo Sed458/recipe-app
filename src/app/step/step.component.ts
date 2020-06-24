@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { timer } from 'rxjs';
 import { Recipe } from '../recipe';
-import { Steps } from '../steps';
+import { Step } from '../step';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -16,9 +15,9 @@ import { StepService } from '../step.service';
 })
 export class StepComponent implements OnInit {
   recipe: Recipe;
-  steps: Steps[];
+  steps: Step[];
 
-  currentStep: Steps;
+  currentStep: Step;
   currentIndex = 0;
 
   defaultTime = 60;

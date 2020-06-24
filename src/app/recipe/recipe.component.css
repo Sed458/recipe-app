@@ -16,9 +16,14 @@ a {
     padding: 40px;
 }
 .recipe-card {
-    max-width: 400px; 
+    max-width: 200px; 
     max-height: 350px;
     margin: 5px; 
+}
+.recipe-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .columnList {
     column-count: 2;

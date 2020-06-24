@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Steps } from '../steps';
+import { Step } from '../step';
 
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { StepService } from '../step.service';
 })
 export class RecipeStepsComponent implements OnInit {
 
-  steps: Steps[];
+  steps: Step[];
 
   constructor(
     private stepService: StepService,
