@@ -31,6 +31,7 @@ import { RecipeStepsComponent } from './recipe-steps/recipe-steps.component';
 import { StepComponent } from './step/step.component';
 import { StepUpdateComponent } from './step-update/step-update.component';
 import { SnackBarSaveComponent } from './snack-bar-save/snack-bar-save.component';
+import { SnackBarStepComponent } from './snack-bar-step/snack-bar-step.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { SnackBarSaveComponent } from './snack-bar-save/snack-bar-save.component
     StepComponent,
     StepUpdateComponent,
     SnackBarSaveComponent,
+    SnackBarStepComponent,
   ],
   imports: [
     BrowserModule,

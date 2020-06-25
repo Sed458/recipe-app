@@ -1,3 +1,12 @@
+.border{
+    border: 3px solid #000;
+}
+.mat-form-field {
+    margin-top: 16px;
+}
+.mat-stepper-horizontal {
+    margin-top: 8px;
+} 
 .step-cards{
     padding-top: 50px;
     padding-bottom: 20px;
@@ -9,13 +18,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.mat-stepper-horizontal {
-    margin-top: 8px;
-} 
-.mat-form-field {
-    margin-top: 16px;
-}
-.border{
-    border: 3px solid #000;
 }

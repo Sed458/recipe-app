@@ -15,24 +15,8 @@ a {
 .container {
     padding: 40px;
 }
-.recipe-card {
-    max-width: 200px; 
-    max-height: 350px;
-    margin: 5px; 
-}
-.recipe-name {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 .columnList {
     column-count: 2;
-}
-.imgs{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    object-position: center;
 }
 .cardList {
     padding-top: 80px;
@@ -55,3 +39,19 @@ a {
   .cardListItem {
     flex: 0 1 calc(33.3% - 32px);
   }
+  .imgs{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+  .recipe-card {
+    max-width: 200px; 
+    max-height: 350px;
+    margin: 5px; 
+}
+.recipe-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

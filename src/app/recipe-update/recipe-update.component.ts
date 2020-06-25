@@ -1,11 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipe';
 import { Ingredient } from '../ingredient';
+import { SnackBarSaveComponent } from '../snack-bar-save/snack-bar-save.component';
+
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { RecipeService } from '../recipe.service';
+
 
 @Component({
   selector: 'app-recipe-update',
@@ -14,11 +18,14 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipeUpdateComponent implements OnInit {
   @Input() recipe: Recipe;
-  
+
+  durationInSeconds = 5;
+
   constructor(
     private route: ActivatedRoute,
     private recipeService: RecipeService,
-    private location: Location
+    private location: Location,
+    private _snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +45,12 @@ export class RecipeUpdateComponent implements OnInit {
   save(): void {
     this.recipeService.updateRecipe(this.recipe)
       .subscribe(() => this.goBack());
+  }
+
+  openSnackBar() {
+    this._snackBar.openFromComponent(SnackBarSaveComponent, {
+      duration: this.durationInSeconds * 500,
+    });
   }
 
 }
