@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { StepUpdateComponent } from './step-update.component';
 
@@ -8,7 +9,8 @@ describe('StepUpdateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StepUpdateComponent ]
+      declarations: [ StepUpdateComponent ],
+      imports: [MatSnackBarModule]
     })
     .compileComponents();
   }));
@@ -20,6 +22,8 @@ describe('StepUpdateComponent', () => {
   });
 
   it('should create', () => {
+    fixture = TestBed.createComponent(StepUpdateComponent);
+    component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });

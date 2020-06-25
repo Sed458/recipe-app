@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { RecipeUpdateComponent } from './recipe-update.component';
 
@@ -8,7 +9,8 @@ describe('RecipeUpdateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecipeUpdateComponent ]
+      declarations: [ RecipeUpdateComponent ],
+      imports: [MatSnackBarModule]
     })
     .compileComponents();
   }));
@@ -20,6 +22,8 @@ describe('RecipeUpdateComponent', () => {
   });
 
   it('should create', () => {
+    fixture = TestBed.createComponent(RecipeUpdateComponent);
+    component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });

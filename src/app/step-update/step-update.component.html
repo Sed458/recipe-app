@@ -1,44 +1,47 @@
-<div class="return-button">
+<div class="return-button" *ngIf="recipe">
     <button (click)="goBack()">{{recipe.name}} Main Page</button>
 </div>
-<div class="steps-update" *ngFor="let step of steps">
-    <mat-card class="border">
-        <button class="delete" (click)="delete(step)">x</button>
-        <br>
-        <br>
-        <mat-card-header>
-            <mat-card-title>
-                <h1>How to Make {{recipe.name | uppercase}}</h1>
-            </mat-card-title>
-            <mat-card-subtitle>{{step.step_number}}. <textarea type="text" style="width:100%; height:100%"
-                    [(ngModel)]="step.title" placeholder="Step Title"></textarea></mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-            <p><textarea type="text" style="width:100%; height:100%" [(ngModel)]="step.description"
-                    placeholder="Step description"></textarea></p>
-            <div *ngFor="let image of step.images">
-                <img src="{{image}}" alt="{{image}}"/>
-                <button class="delete" (click)="deleteImage(step, image)">x</button>
-            </div>
-            <div class="add-image">
-                <input #imageUrl placeholder="Image Url"/>
-                <button (click)="addImage(step, imageUrl.value)">Add Image </button>
-            </div>
-            <div *ngFor="let video of step.videos">
-                <mat-video src="{{video}}" [autoplay]="true" [preload]="true" [fullscreen]="false" [download]="false" color="accent" spinner="spin"></mat-video>
-                <button class="delete" (click)="deleteVideo(step, video)">x</button>
-            </div>
-            <div class="add-video">
-                <input type="text" #videoUrl placeholder="Video Url" accept="video/mp4"/>
-                <button (click)="addVideo(step, videoUrl.value)">Add Video </button>
-            </div>
-        </mat-card-content>
-        <mat-card-actions>
-            <button (click)="save(step);openSnackBarSave()" >Save</button>
-        </mat-card-actions>
-    </mat-card>
+<div class="steps-update" *ngIf="recipe">
+    <div *ngFor="let step of steps">
+        <mat-card class="border">
+            <button class="delete" (click)="delete(step)">x</button>
+            <br>
+            <br>
+            <mat-card-header>
+                <mat-card-title>
+                    <h1>How to Make {{recipe.name | uppercase}}</h1>
+                </mat-card-title>
+                <mat-card-subtitle>{{step.step_number}}. <textarea type="text" style="width:100%; height:100%"
+                        [(ngModel)]="step.title" placeholder="Step Title"></textarea></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p><textarea type="text" style="width:100%; height:100%" [(ngModel)]="step.description"
+                        placeholder="Step description"></textarea></p>
+                <div *ngFor="let image of step.images">
+                    <img src="{{image}}" alt="{{image}}" />
+                    <button class="delete" (click)="deleteImage(step, image)">x</button>
+                </div>
+                <div class="add-image">
+                    <input #imageUrl placeholder="Image Url" />
+                    <button (click)="addImage(step, imageUrl.value)">Add Image </button>
+                </div>
+                <div *ngFor="let video of step.videos">
+                    <mat-video src="{{video}}" [autoplay]="true" [preload]="true" [fullscreen]="false"
+                        [download]="false" color="accent" spinner="spin"></mat-video>
+                    <button class="delete" (click)="deleteVideo(step, video)">x</button>
+                </div>
+                <div class="add-video">
+                    <input type="text" #videoUrl placeholder="Video Url" accept="video/mp4" />
+                    <button (click)="addVideo(step, videoUrl.value)">Add Video </button>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button (click)="save(step);openSnackBarSave()">Save</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>
-<div class="new-step">
+<div class="new-step" *ngIf="recipe">
     <mat-card class="border">
         <button (click)="goBack()">{{recipe.name}} Main Page</button>
         <br>
@@ -49,7 +52,7 @@
             </mat-card-title>
             <mat-card-subtitle>
                 <label> Step Number:
-                    <input #stepNumber type="number" placeholder="{{this.steps.length + 1}}"/>
+                    <input #stepNumber type="number" placeholder="{{this.steps.length + 1}}" />
                 </label>
                 <label> Step Title:
                     <input #stepTitle />
@@ -64,15 +67,17 @@
             <br>
             <label>Image Url:</label>
             <br>
-            <input #stepImages accept="image/*"/>
+            <input #stepImages accept="image/*" />
             <br>
             <br>
             <label>Video Url (MP4):</label>
             <br>
-            <input #stepVideos accept="video/mp4"/>
+            <input #stepVideos accept="video/mp4" />
         </mat-card-content>
         <mat-card-actions>
-            <button (click)="add(stepTitle.value, stepNumber.value, stepDescription.value, recipe.id, stepImages.value, stepVideos.value); openSnackBarStep()">Add Step</button>
+            <button
+                (click)="add(stepTitle.value, stepNumber.value, stepDescription.value, recipe.id, stepImages.value, stepVideos.value); openSnackBarStep()">Add
+                Step</button>
         </mat-card-actions>
     </mat-card>
 </div>

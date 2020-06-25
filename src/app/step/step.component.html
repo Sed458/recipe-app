@@ -1,4 +1,4 @@
-<div class="step-cards">
+<div class="step-cards" *ngIf="recipe">
     <mat-card class="border">
         <button (click)="goBack()">{{recipe.name}} Main Page</button>
         <br>

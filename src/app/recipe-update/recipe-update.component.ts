@@ -6,7 +6,7 @@ import { SnackBarSaveComponent } from '../snack-bar-save/snack-bar-save.componen
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { RecipeService } from '../recipe.service';
 
